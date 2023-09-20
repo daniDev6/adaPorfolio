@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -131,29 +131,66 @@ header>label {
 }
 
 .datos div {
-    width: 500px;
+    width: 50%;
 
 }
 .datos-img{
     position: relative;
+    overflow: hidden;
+    max-height: 30rem;
+    min-height: 15rem;
+    max-width: 30rem;
+    display: flex;
+    border-radius: 1rem;
+
+    align-items: flex-start;
+    
 }
 .datos-img:hover::after{
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
     position: absolute;
-    content: '';
+    content: 'vive y deja vivir';
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
     background-color: rgba(0, 0, 0, .5);
 }
+.datos-img:hover{
+    box-shadow: 1px 1px 10px white,-1px -1px 10px white;
+}
 .datos-img img {
     width: 100%;
+    height: 100%;
 }
 
 .container {
     width: 90%;
     margin: auto;
 }
+
+@media(max-width:768px){
+    .container.datos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .datos div {
+        width: 100%;
+    }
+    .datos-img{
+        max-height: 20rem;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+}
+
 
 .conocimientos {
     display: flex;
@@ -171,10 +208,13 @@ header>label {
     color:rgb(233, 247, 112);
 }
 .container-conocimientos div{
+    display: flex;
+    flex-direction: column;
     transition: all 2s;
     perspective: 10000000000000px;
+    text-align: center;
 }
-.container-conocimientos div:hover{
+.container-conocimientos div:hover i{
     animation: girar 3s ease-in-out infinite;
     transform: rotateY(180deg);
 }
@@ -196,6 +236,22 @@ header>label {
     /* perspective: 1200px;
     transform: rotateZ(780deg); */
 }
+.container-conocimientos div p{
+    color: white;
+}
+@media(max-width:768px){
+    .container-conocimientos{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container-conocimientos div{
+        width: 100%;
+    }
+}
+
+
+
 
 h2{
 margin: 1rem;
